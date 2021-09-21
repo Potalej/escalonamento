@@ -1,4 +1,4 @@
-from fração import fracaoOrdinaria
+from fracao import fracaoOrdinaria
 
 def adicao(m1, m2):
     '''Adiciona diretamente cada elemento de lista a outra.'''
