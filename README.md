@@ -9,19 +9,42 @@ Por exemplo, no caso da seguinte matriz, apenas se passa a matriz como parâmetr
 
 ```python
 matriz = [
-  [2, 1, -2],
-  [3, 2, 2],
-  [5, 4, 3]
+    [1, 0, -1, 2, 0],
+    [2, 1, 3, 0, 0],
+    [0, 1, -5, 4, 0],
+    [1, 0, -11, 10, 0]
 ]
 esq = escalonar(matriz)
 ```
 
 O retornado contém, além da matriz escalonada, as operações realizadas:
 ```terminal
-L3 = L3-5/2*L1
-L2 = L2-3/2*L1
-L2 = L2-1/3*L1
-[ 2 1 -2 ]
-[ 0 3/2 8 ]
-[ 0 0 7/3 ]
+[ 1 0 -1 2 0 ]
+[ 2 1 3 0 0 ]  
+[ 0 1 -5 4 0 ] 
+[ 0 0 -10 8 0 ]
+L4 = L4-1*L1   
+
+[ 1 0 -1 2 0 ] 
+[ 0 1 -5 4 0 ] 
+[ 0 0 -10 8 0 ]
+[ 0 1 5 -4 0 ] 
+L2 = L2-2*L1   
+
+[ 1 0 -1 2 0 ]
+[ 0 1 -5 4 0 ]
+[ 0 0 -10 8 0 ]
+[ 0 0 10 -8 0 ]
+L4 = L4-1*L2
+
+[ 1 0 -1 2 0 ]
+[ 0 1 -5 4 0 ]
+[ 0 0 -10 8 0 ]
+[ 0 0 0 0 0 ]
+L4 = L4+1*L3
+
+[ 1 0 -1 2 0 ]
+[ 0 1 -5 4 0 ]
+[ 0 0 -10 8 0 ]
+[ 0 0 0 0 0 ]
 ```

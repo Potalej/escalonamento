@@ -36,15 +36,18 @@ def escalonar(matriz):
             pos = elementosNulos(conjunto[0])
             # cálculo do coeficiente para o anulamento de termo
             coef = -conjunto[-1][pos]/conjunto[0][pos] 
-            # apaga o elemento anulado da matriz
-            del matriz[matriz.index(conjunto[-1])]
             # calcula o novo termo com base no coeficiente encontrado
             novoTermo = adicao(conjunto[-1], produtoEscalar(conjunto[0], coef))
             # adiciona à matriz
             matriz.append(novoTermo)
             # exibe qual operação entre linhas foi feita
             coefStr = str(fracaoOrdinaria(coef))
-            print(f"L{len(conjunto)} = L{len(conjunto)}{'+'+coefStr if coef >= 0 else coefStr}*L1")
+            # posição
+            pos = matriz.index(conjunto[-1])
+            # apaga o elemento anulado da matriz
+            del matriz[matriz.index(conjunto[-1])]
+            exibir(matriz)
+            print(f"L{pos+1} = L{pos+1}{'+'+coefStr if coef >= 0 else coefStr}*L{matriz.index(conjunto[0])+1}\n")
             # repete o processo
             return escalonar(matriz)
     # se não houver mais o que se escalonar, se retorna a matriz escalonada
